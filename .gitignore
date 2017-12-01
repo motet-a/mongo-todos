@@ -1,0 +1,6 @@
+/client/node_modules/
+/client/public/*.js
+/client/public/*.js.map
+/client/public/*.css
+/client/public/*.css.map
+/server/node_modules/

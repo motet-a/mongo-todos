@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`POST /task-lists 400 1`] = `
+Object {
+  "message": "Required value at \`name\`, got \`undefined\`",
+  "path": Array [
+    "name",
+  ],
+}
+`;
