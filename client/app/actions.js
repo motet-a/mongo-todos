@@ -43,6 +43,18 @@ const updateTaskList = taskList => ({
     })
 })
 
+const deleteTaskList = taskListId => ({
+  type: 'DELETE_TASK_LIST',
+  payload: fetchJson('DELETE', `/api/task-lists/${taskListId}`)
+    .then(res => {
+      if (res.status != 204) {
+        return Promise.reject(res)
+      }
+
+      return {taskListId}
+    })
+})
+
 const createTask = ({taskListId, task}) => ({
   type: 'CREATE_TASK',
   payload: fetchJson('POST', `/api/task-lists/${taskListId}/tasks`, task)
@@ -76,7 +88,7 @@ const deleteTask = ({taskListId, taskId}) => ({
         return Promise.reject(res)
       }
 
-      return ({taskId})
+      return {taskId}
     })
 })
 
@@ -85,6 +97,7 @@ export default bindActionCreators(
     fetchTaskList,
     updateTaskList,
     createTaskList,
+    deleteTaskList,
     createTask,
     deleteTask,
     updateTask

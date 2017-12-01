@@ -42,6 +42,15 @@ class TaskList extends Component {
     this.props.router.navigate('home')
   }
 
+  deleteTaskList = () => {
+    const {router, taskList} = this.props
+
+    if (window.confirm('Are you sure you want to delete this task list? This action can’t be undone.')) {
+      actions.deleteTaskList(taskList._id)
+        .then(() => router.navigate('home'))
+    }
+  }
+
   render() {
     const {taskList, tasks} = this.props
     if (!taskList) {
@@ -63,6 +72,10 @@ class TaskList extends Component {
       ),
 
       h('button', {onClick: this.createTask}, 'Add task'),
+
+      h('br'), h('br'), // HACK
+
+      h('button', {onClick: this.deleteTaskList}, 'Delete task list'),
 
       h('br'), h('br'), // HACK
 
