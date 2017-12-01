@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+  - "9"
+
+services:
+  - mongodb
+
+cache:
+  directories:
+    - client/node_modules
+    - server/node_modules
+
+install:
+  - node --version
+  - (cd server && yarn)
+  - (cd client && yarn)
+
+script:
+  - (cd client && yarn run lint)
+  - (cd server && yarn run lint && yarn test --ci)
