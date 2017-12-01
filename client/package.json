@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "brunch build",
-    "watch": "brunch watch"
+    "watch": "brunch watch",
+    "lint": "standard --parser babel-eslint app"
   },
   "dependencies": {
     "lodash": "^4.17.4",
@@ -23,9 +24,11 @@
   "devDependencies": {
     "babel-brunch": "^6.1.1",
     "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.2",
     "babel-plugin-syntax-object-rest-spread": "^6.13.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
-    "brunch": "^2.10.12"
+    "brunch": "^2.10.12",
+    "standard": "^10.0.3"
   }
 }
