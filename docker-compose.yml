@@ -1,0 +1,25 @@
+version: '3'
+services:
+  node:
+    restart: always
+    build: .
+    ports:
+      - 3000:3000
+    networks:
+      - back
+    environment:
+      - "TODO_MONGO_URL=mongodb://mongo:27017/todo"
+
+  mongo:
+    restart: always
+    image: 'mvertes/alpine-mongo'
+    volumes:
+      - mongo:/data/db
+    networks:
+      - back
+
+networks:
+  back:
+
+volumes:
+  mongo:

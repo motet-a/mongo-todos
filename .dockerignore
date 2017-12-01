@@ -1,0 +1,6 @@
+client/node_modules
+client/public/*.js
+client/public/*.js.map
+server/node_modules
+server/coverage
+server/dist

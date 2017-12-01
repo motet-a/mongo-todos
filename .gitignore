@@ -4,3 +4,4 @@
 /client/public/*.css
 /client/public/*.css.map
 /server/node_modules/
+/server/dist/

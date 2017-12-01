@@ -4,8 +4,17 @@ const {MongoClient} = require('mongodb')
 
 const url = process.env.TODO_MONGO_URL || 'mongodb://localhost:27017/todo'
 
+const wait = delay => new Promise(resolve => setTimeout(resolve, delay))
+
 const connect = async (options = {}) => {
-  const db = await MongoClient.connect(url + (options.test ? '_test' : ''))
+  let db
+  try {
+    db = await MongoClient.connect(url + (options.test ? '_test' : ''))
+  } catch (error) {
+    await wait(1000)
+    return connect(options)
+  }
+
   global.__DB__ = db
   return db
 }

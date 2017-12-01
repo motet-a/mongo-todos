@@ -29,6 +29,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "brunch": "^2.10.12",
-    "standard": "^10.0.3"
+    "standard": "^10.0.3",
+    "uglify-js-brunch": "^2.10.0"
   }
 }

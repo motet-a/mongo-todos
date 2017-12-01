@@ -1,19 +1,22 @@
 import {applyMiddleware, createStore} from 'redux'
-import {createLogger} from 'redux-logger'  // TODO: Disable in production
 import promiseMiddleware from 'redux-promise-middleware'
 
 import reducer from './reducers'
 
-const logger = createLogger({
-  collapsed: true
-})
+const middleware = [promiseMiddleware()]
+
+if (process.env.NODE_ENV !== 'production') {
+  const {createLogger} = require('redux-logger')
+
+  const logger = createLogger({
+    collapsed: true
+  })
+  middleware.push(logger)
+}
 
 const store = createStore(
   reducer,
-  applyMiddleware(
-    promiseMiddleware(),
-    logger
-  )
+  applyMiddleware(...middleware)
 )
 
 // For debugging purposes

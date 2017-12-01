@@ -23,3 +23,9 @@ exports.plugins = {
     plugins: ['transform-class-properties', 'syntax-object-rest-spread']
   }
 }
+
+exports.overrides = {
+  production: {
+    sourceMaps: true
+  }
+}
