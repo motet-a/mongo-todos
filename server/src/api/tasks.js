@@ -20,7 +20,7 @@ router.post('/task-lists/:listId/tasks', async (ctx, next) => {
     .findOneAndUpdate({
       _id: ctx.params.listId
     }, {
-      $addToSet: {tasks: task}
+      $push: {tasks: task}
     }, {
       returnOriginal: false
     })
