@@ -1,7 +1,7 @@
 FROM node:9-alpine
 RUN mkdir /todo
 COPY client /todo/client
-RUN cd /todo/client
+RUN cd /todo/client \
   && yarn install \
   && yarn run build --production \
   && yarn run gzip
