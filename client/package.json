@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "gzip": "gzip -k public/*",
-    "gzip-clean": "rm public/*.gz",
+    "gzip-busybox": "rm -f public/*.gz && cp -R public public-unzipped && gzip public/* && cp public-unzipped/* ./public/ && rm -R public-unzipped",
+    "gzip-clean": "rm -f public/*.gz",
     "build": "brunch build",
     "watch": "brunch watch",
     "lint": "standard --parser babel-eslint app"

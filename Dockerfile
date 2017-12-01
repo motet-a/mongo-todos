@@ -4,7 +4,7 @@ COPY client /todo/client
 RUN cd /todo/client \
   && yarn install \
   && yarn run build --production \
-  && yarn run gzip
+  && yarn run gzip-busybox
 
 
 
