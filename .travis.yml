@@ -17,4 +17,4 @@ install:
 
 script:
   - (cd client && yarn run lint)
-  - (cd server && yarn run lint && yarn test --ci)
+  - (cd server && yarn run lint && yarn test --ci --coverage)
