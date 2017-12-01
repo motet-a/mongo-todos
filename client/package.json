@@ -5,6 +5,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "gzip": "gzip -k public/*",
+    "gzip-clean": "rm public/*.gz",
     "build": "brunch build",
     "watch": "brunch watch",
     "lint": "standard --parser babel-eslint app"
