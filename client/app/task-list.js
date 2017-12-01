@@ -1,4 +1,5 @@
-import _ from 'lodash'
+import pickBy from 'lodash/pickBy'
+import debounce from 'lodash/debounce'
 import {connect} from 'react-redux'
 import {Component} from 'react'
 import h from 'react-hyperscript'
@@ -24,7 +25,7 @@ class TaskList extends Component {
     actions.fetchTaskList(route.params.id)
   }
 
-  nameChanged = _.debounce(name => {
+  nameChanged = debounce(name => {
     actions.updateTaskList({
       _id: this.props.taskList._id,
       name,
@@ -90,7 +91,7 @@ function mapStateToProps(state, {route}) {
     return {}
   }
 
-  const tasks = _.pickBy(state.tasks, t => t.taskList === taskList._id)
+  const tasks = pickBy(state.tasks, t => t.taskList === taskList._id)
   return {taskList, tasks}
 }
 

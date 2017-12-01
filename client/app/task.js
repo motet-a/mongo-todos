@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import debounce from 'lodash/debounce'
 import {Component} from 'react'
 import h from 'react-hyperscript'
 
@@ -23,7 +23,7 @@ export default class Task extends Component {
     })
   }
 
-  textChanged = _.debounce(text => {
+  textChanged = debounce(text => {
     this.update({text})
   }, 200)
 
