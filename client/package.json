@@ -20,11 +20,11 @@
     "react-redux": "^5.0.6",
     "react-router5": "^5.4.0",
     "redux": "^3.7.2",
-    "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^5.0.0",
     "router5": "^5.7.0"
   },
   "devDependencies": {
+    "redux-logger": "^3.0.6",
     "babel-brunch": "^6.1.1",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.2",
